@@ -1,9 +1,12 @@
 <template>
-  <ul class="days">
-    <li v-for="(day, index) in days">
-      <router-link :to="{name: 'day', params: {id: index} }">{{day.value}}</router-link>
-    </li>
-  </ul>
+  <div class="days">
+  <h3>Days</h3>
+    <ul>
+      <li v-for="(day, index) in days" >
+        <router-link :to="{name: 'day', params: {id: index} }">{{index + 1}}. {{day.value}}</router-link>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -20,10 +23,13 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.days ul {
+  margin: 10px;
+}
 .days li {
   list-style-type: none;
   cursor: pointer;
-  margin:2px;
+  margin: 2px;
 }
 .days li:hover {
   background-color: lightgreen;
