@@ -1,15 +1,29 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import VueRouter from 'vue-router'
+import Home from '@/components/Home'
+import Days from '@/components/Days'
+import Day from '@/components/Day'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+export default new VueRouter({
+
+  mode: 'history',
   routes: [
     {
-      path: '/',
-      name: 'Hello',
-      component: Hello
+      path: '/home',
+      name: 'home',
+      component: Home
+    },
+    {
+      path: '/days',
+      name: 'days',
+      component: Days
+    },
+    {
+      path: '/day/:id',
+      name: 'day',
+      component: Day
     }
   ]
 })

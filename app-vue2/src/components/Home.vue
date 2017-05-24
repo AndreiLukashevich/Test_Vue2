@@ -1,13 +1,12 @@
 <template>
-  <div class="hello">
+  <div class="home">
     <h1>{{ msg }}</h1>
-    <button type="button" class="btn btn-outline-success">Hello world!</button>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'hello',
+  name: 'home',
   data () {
     return {
       msg: 'Hello world!'
