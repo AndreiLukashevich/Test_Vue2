@@ -3,7 +3,7 @@
   <h3>Days</h3>
     <ul>
       <li v-for="(day, index) in days" >
-        <router-link :to="{name: 'day', params: {id: index} }">{{index + 1}}. {{day.value}}</router-link>
+        <router-link :to="{name: 'day', params: {id: day.id} }">{{index + 1}}. {{day.value}}</router-link>
       </li>
     </ul>
   </div>
