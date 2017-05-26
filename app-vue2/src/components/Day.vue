@@ -12,9 +12,9 @@
       </div>
   
       <br />
-      <button id="goBack" v-on:click="goBack('/days')" class="btn btn-outline-success">Go Back</button>
+      <button id="goBack" v-on:click="goBack('/days')" :disabled="errors.has('task')" class="btn btn-outline-success">Go Back</button>
       <button id="editTask" v-on:click="editTask(getInput())" class="btn btn-outline-success">Edit</button>
-      <button v-if="editSave" id="saveTask" v-on:click="saveTask(getInput())" class="btn btn-outline-success">Save</button>
+      <button v-if="editSave" id="saveTask" v-on:click="saveTask(getInput())" :disabled="errors.has('task')" class="btn btn-outline-success">Save</button>
     </div>
   </div>
 </template>
@@ -43,14 +43,14 @@ export default {
       return document.getElementsByTagName('input')[0]
     }
   },
-  data() {
+  data () {
     return {
       days: listDays,
       day: null,
       editSave: false
     }
   },
-  created() {
+  created () {
     var id = this.$route.params.id
 
     this.day = this.days[id]
