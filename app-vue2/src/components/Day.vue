@@ -1,11 +1,10 @@
 <template>
-  <div class="days">
+  <div class="day">
     <div v-if="day">
       <h2>Selected Day</h2>
-      Value: {{day.value}}
-      <br />
+      <h4>{{day.value}}</h4>
   
-      <label for="task">Task</label>
+      <label for="task" class="lead">Task</label>
       <input v-validate data-vv-rules="required|alpha|min:3" name="task" type="text" class="form-control col-md-3" id="task" v-model="day.task" required disabled>
       <div class="alert alert-danger" v-if="errors.has('task')">
         {{ errors.first('task') }}
