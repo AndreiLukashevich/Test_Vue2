@@ -3,7 +3,12 @@
   <h3>Days</h3>
     <ul>
       <li v-for="(day, index) in days" >
-        <router-link :to="{name: 'day', params: {id: day.id} }">{{index + 1}}. {{day.value}}</router-link>
+        <router-link class="nav-link" active-class="active" :to="{name: 'day', params: {id: index} } ">
+          {{index + 1}}. {{day.value}}
+        </router-link>
+        <transition name="fade">
+          <router-view></router-view>
+        </transition>
       </li>
     </ul>
   </div>
@@ -23,20 +28,16 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.days ul {
-  margin: 10px;
-}
 .days li {
   list-style-type: none;
   cursor: pointer;
   margin: 2px;
 }
 .days li:hover {
-  background-color: lightgreen;
+  background-color:#40ee88;
 }
-
-.days li.selected {
-  font-weight: bold;
-  background-color: lightgreen;
-}
+  .nav-link {
+    padding: 0px;
+    color:#1d1e1f;
+  }
 </style>
